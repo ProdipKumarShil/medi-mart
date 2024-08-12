@@ -21,6 +21,9 @@ const config = {
       colors: {
         mediPrimary: "#1364FF",
         mediSecondary: "#DEE9FF",
+        mediRed: "#D64779",
+        mediTextPrimary: "#0D0D0D",
+        mediTextSecondary: "#7A7A7A",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

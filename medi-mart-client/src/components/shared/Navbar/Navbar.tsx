@@ -1,10 +1,16 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { MenuIcon, PhoneCall } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Navbar = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   return (
     <div className='bg-mediSecondary py-6'>
       <div className="flex items-center justify-between screen-lg ">
@@ -24,7 +30,7 @@ const Navbar = () => {
         </div>
 
         {/* side bar */}
-        <Sheet>
+        {isMounted && <Sheet>
           <Button className='lg:hidden' variant='outline' size='icon'><SheetTrigger><MenuIcon /></SheetTrigger></Button>
           <SheetContent side='left'>
             <SheetHeader>
@@ -40,7 +46,7 @@ const Navbar = () => {
               </SheetDescription>
             </SheetHeader>
           </SheetContent>
-        </Sheet>
+        </Sheet>}
       </div>
     </div>
   )

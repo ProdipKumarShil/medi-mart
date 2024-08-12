@@ -1,8 +1,11 @@
+import Banner from '@/components/shared/Banner/Banner'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <Banner />
+    </div>
   )
 }
 
